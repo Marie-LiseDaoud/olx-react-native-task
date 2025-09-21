@@ -8,6 +8,7 @@ const auth = {
     enterUsername: "Enter username",
     usernameRequired: "Username is required",
     loginToAccount: "Login to your OLX account",
+    skip: "Skip",
   },
   ar: {
     passwordRequired: "كلمة المرور مطلوبة",
@@ -18,6 +19,7 @@ const auth = {
     enterUsername: "أدخل اسم المستخدم",
     usernameRequired: "اسم المستخدم مطلوب",
     loginToAccount: "سجّل الدخول إلى حسابك في OLX",
+    skip: "تخطى",
   },
 };
 

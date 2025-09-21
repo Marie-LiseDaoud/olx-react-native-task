@@ -3,7 +3,6 @@ const { width: screenWidth } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   card: {
-    width: screenWidth / 1.5,
     backgroundColor: "#fff",
     borderRadius: 12,
     // marginHorizontal: 10,
@@ -12,7 +11,6 @@ const styles = StyleSheet.create({
     shadowRadius: 6,
     elevation: 3,
     overflow: "hidden",
-    marginLeft:20
   },
   image: {
     width: "100%",

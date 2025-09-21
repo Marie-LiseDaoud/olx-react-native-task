@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   language: "en",
   dir: "ltr",
+  location:"Lebanon"
 };
 
 export const preferencesSlice = createSlice({
@@ -14,6 +15,9 @@ export const preferencesSlice = createSlice({
     },
     setDir(state, action) {
       state.dir = action.payload;
+    },
+    setLocation(state, action) {
+      state.location = action.payload;
     },
   },
 });

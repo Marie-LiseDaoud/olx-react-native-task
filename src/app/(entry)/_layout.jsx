@@ -6,7 +6,6 @@ const EntryLayout = () => {
   return (
     <Stack
       screenOptions={{
-        // header: (props) => <Header {...props} />,
       }}
     >
       <Stack.Screen name="index" options={{ headerShown: false }} />

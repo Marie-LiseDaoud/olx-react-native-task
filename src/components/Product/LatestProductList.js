@@ -1,26 +1,29 @@
 import { ScrollView } from "react-native";
 import Product from "./index";
+import { fetchLatestProducts } from "./fetchProducts";
 import useLanguage from "../../hooks/useLanguage";
 
 import React, { useEffect, useState } from "react";
 import { ActivityIndicator, View } from "react-native";
-import { fetchFeaturedProducts } from "./fetchProducts";
+import latestProducts from "../../data/latestProducts";
 
-const ProductList = () => {
+const LatestProductList = () => {
   const { language } = useLanguage();
-  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [latestProductsData, setLatestProductsData] = useState(latestProducts);
 
   useEffect(() => {
-    fetchFeaturedProducts().then((data) => {
-      setProducts(data);
+    fetchLatestProducts().then((data) => {
+      setLatestProductsData(data);
       setLoading(false);
     });
   }, []);
 
   if (loading) {
     return (
-      <View style={{ height: 180, justifyContent: "center", alignItems: "center" }}>
+      <View
+        style={{ height: 180, justifyContent: "center", alignItems: "center" }}
+      >
         <ActivityIndicator size="large" color="#F57C00" />
       </View>
     );
@@ -32,11 +35,15 @@ const ProductList = () => {
       showsHorizontalScrollIndicator={false}
       style={{ marginVertical: 16 }}
     >
-      {products.map((product) => (
-        <Product key={product.externalID} product={product} language={language} />
+      {latestProductsData.map((product) => (
+        <Product
+          key={product.externalID}
+          product={product}
+          language={language}
+        />
       ))}
     </ScrollView>
   );
 };
 
-export default ProductList;
+export default LatestProductList;

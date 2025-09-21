@@ -10,7 +10,7 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
 
   const icons = {
     home: { lib: "FA5", name: "home", label: "Home" },
-    bookings: { lib: "FA5", name: "book", label: "Ads" },
+    search: { lib: "FA5", name: "search", label: "Search" },
     message: { lib: "IO", name: "chatbox-ellipses", label: "Messages" },
     profile: { lib: "FA5", name: "user-alt", label: "Profile" },
   };
@@ -20,7 +20,7 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
       style={{
         paddingBottom: insets.bottom,
         alignItems: "center",
-        backgroundColor: colors.white.normal.default,
+        backgroundColor: colors.grey.dark.default,
       }}
     >
       <View style={[styles.tabBarContainer]}>

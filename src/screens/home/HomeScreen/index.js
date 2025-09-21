@@ -6,6 +6,7 @@ import ImageCarousel from "../../../components/ImagesCarousel";
 import CircleCategories from "../../../components/CircleCategories";
 import ProductList from "../../../components/Product/ProductList";
 import useLanguage from "../../../hooks/useLanguage";
+import LatestProductList from "../../../components/Product/LatestProductList";
 
 export default function HomeScreen() {
   const { t } = useLanguage();
@@ -21,6 +22,12 @@ export default function HomeScreen() {
         </Text>
       </View>
       <ProductList />
+      <View style={{ paddingHorizontal: 20 }}>
+        <Text fontSize={20} weight="bold">
+          {t("home", "latestProducts")}
+        </Text>
+      </View>
+      <LatestProductList />
     </ScrollView>
   );
 }

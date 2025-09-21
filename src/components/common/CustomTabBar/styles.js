@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    boxShadow: "0px -2px 4px rgba(189, 189, 206, 0.4)",
     height: 64,
   },
   tabBarButton: {

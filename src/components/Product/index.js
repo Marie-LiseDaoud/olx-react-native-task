@@ -1,11 +1,12 @@
 import React from "react";
-import { View, Image, TouchableOpacity } from "react-native";
+import { View, Image, TouchableOpacity, Dimensions } from "react-native";
 import Text from "../common/Text";
 import useLanguage from "../../hooks/useLanguage";
 import styles from "./styles";
 import colors from "../../config/colors";
+const { width: screenWidth } = Dimensions.get("window");
 
-const Product = ({ product }) => {
+const Product = ({ product, fullWidth = false }) => {
   const { router } = require("expo-router");
   const handlePress = () => {
     router.push({
@@ -34,7 +35,16 @@ const Product = ({ product }) => {
   const photoUrl = `https://images.olx.com.lb/thumbnails/${firstPhotoId}-800x600.webp`;
 
   return (
-    <TouchableOpacity style={styles.card} onPress={handlePress}>
+    <TouchableOpacity
+      style={[
+        styles.card,
+        {
+          width: fullWidth ? screenWidth - 40 : screenWidth / 1.5,
+          marginLeft: fullWidth ? 0 : 20,
+        },
+      ]}
+      onPress={handlePress}
+    >
       <Image source={{ uri: photoUrl }} style={styles.image} />
       <View style={styles.info}>
         <Text

@@ -16,7 +16,11 @@ const styles = StyleSheet.create({
     gap: 10,
   },
 
-  leftBackWrapper: { flexDirection: "row", flexGrow: 1 },
+  location: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginLeft: 8,
+  },
 });
 
 export default styles;

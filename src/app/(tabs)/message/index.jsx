@@ -10,8 +10,7 @@ export default function MessageScreen() {
         gap: 10,
       }}
     >
-      <Text>Boilerplate</Text>
-      <Text>Tab Two</Text>
+      <Text>No New Messages!</Text>
     </View>
   );
 }

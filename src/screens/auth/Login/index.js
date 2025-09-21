@@ -52,7 +52,7 @@ const LoginScreen = () => {
             weight="bold"
             style={{ textDecorationLine: "underline" }}
           >
-            Skip
+            {t("auth", "skip")}
           </Text>
         </TouchableOpacity>
         <LanguageSwitcher />

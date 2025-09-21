@@ -1,4 +1,4 @@
-const products = [
+const featuredProducts = [
   {
     externalID: "116504603",
     id: 3960252,
@@ -1727,4 +1727,4 @@ const products = [
   },
 ];
 
-export default products;
+export default featuredProducts;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { use, useState } from "react";
 import { TouchableOpacity, View } from "react-native";
 import styles from "./styles";
 
@@ -7,9 +7,17 @@ import colors from "../../../config/colors";
 import Icon from "../Icon";
 import LanguageSwitcher from "../LanguageSwitcher";
 import useLanguage from "../../../hooks/useLanguage";
+import Text from "../Text";
+import { useDispatch, useSelector } from "react-redux";
+import { preferencesSlice } from "../../../redux/reducers/preferencesReducer";
+import LocationModal from "../../LocationModal";
 
 const TabHeader = ({ title, route, removeBack = true, ...props }) => {
   const { flexDirection, isRTL } = useLanguage();
+
+  const [locationModalVisible, setLocationModalVisible] = useState(false);
+  const dispatch = useDispatch();
+  const { location } = useSelector((state) => state.preferences);
   return (
     <View
       style={[
@@ -21,6 +29,25 @@ const TabHeader = ({ title, route, removeBack = true, ...props }) => {
         },
       ]}
     >
+      {removeBack && (
+        <TouchableOpacity
+          onPress={() => setLocationModalVisible(true)}
+          style={styles.location}
+        >
+          <Text
+            style={{ fontWeight: "bold", color: colors.white.normal.default }}
+          >
+            {location}
+          </Text>
+          <Icon
+            lib="EN"
+            name="chevron-down"
+            size={20}
+            color={colors.orange.dark.default}
+          />
+        </TouchableOpacity>
+      )}
+
       <View style={{ flexDirection: "row" }}>
         {!removeBack && (
           <TouchableOpacity onPress={() => props.navigation?.goBack?.()}>
@@ -43,6 +70,13 @@ const TabHeader = ({ title, route, removeBack = true, ...props }) => {
           color={colors.grey.light.default}
         />
       </View>
+      <LocationModal
+        visible={locationModalVisible}
+        onClose={() => setLocationModalVisible(false)}
+        onSelect={(loc) => {
+          dispatch(preferencesSlice.actions.setLocation(loc));
+        }}
+      />
     </View>
   );
 };
