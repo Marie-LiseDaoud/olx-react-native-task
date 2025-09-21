@@ -10,7 +10,7 @@ export default function TabTwoScreen() {
         gap: 10,
       }}
     >
-      <Text>boilerplate</Text>
+      <Text>Boilerplate</Text>
       <Text>Tab Two</Text>
     </View>
   );

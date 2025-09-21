@@ -27,6 +27,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
+    "scheme": "olxmarielisedaoud",
     "plugins": [
       "expo-router",
       "expo-asset"

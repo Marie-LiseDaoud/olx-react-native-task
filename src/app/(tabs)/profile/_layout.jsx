@@ -1,0 +1,15 @@
+
+
+import { Stack } from "expo-router";
+
+
+const MessageLayout = () => {
+  return (
+    <Stack
+    >
+      <Stack.Screen name="index" />
+    </Stack>
+  );
+};
+
+export default MessageLayout;

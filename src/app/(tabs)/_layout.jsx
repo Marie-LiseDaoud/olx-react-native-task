@@ -1,19 +1,37 @@
 import React from "react";
 import { Tabs } from "expo-router";
+import CustomTabBar from "../../components/common/CustomTabBar";
 
 export default function TabLayout() {
   return (
-    <Tabs>
+    <Tabs
+      tabBar={(props) => <CustomTabBar {...props} />}
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
           title: "Home",
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="bookings"
         options={{
-          title: "Explore",
+          title: "Bookings",
+        }}
+      />
+      <Tabs.Screen
+        name="message"
+        options={{
+          title: "Message",
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
         }}
       />
     </Tabs>

@@ -8,9 +8,11 @@ import { thunk } from "redux-thunk";
 import reactotron from "../ReactotronConfig";
 
 import preferencesReducer from "./reducers/preferencesReducer";
+import authReducer from "./reducers/authReducer";
 
 const reducers = combineReducers({
   preferences: preferencesReducer,
+  auth: authReducer,
 });
 
 const persistConfig = {

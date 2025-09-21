@@ -1,6 +1,6 @@
 import { Text, View } from "react-native";
 
-export default function TabOneScreen() {
+export default function MessageScreen() {
   return (
     <View
       style={{
@@ -10,8 +10,8 @@ export default function TabOneScreen() {
         gap: 10,
       }}
     >
-      <Text>boilerplate</Text>
-      <Text>Tab One</Text>
+      <Text>Boilerplate</Text>
+      <Text>Tab Two</Text>
     </View>
   );
 }

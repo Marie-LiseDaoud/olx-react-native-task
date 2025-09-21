@@ -8,6 +8,7 @@ import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 import { QueryClientProvider } from "@tanstack/react-query";
 import queryClient from "./network/queryClient";
+import { KeyboardProvider } from "react-native-keyboard-controller";
 
 if (__DEV__) {
   require("./ReactotronConfig");
@@ -19,7 +20,9 @@ const RootLayout = ({ children }) => {
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <ThemeProvider value={DefaultTheme}>{children}</ThemeProvider>
+          <ThemeProvider value={DefaultTheme}>
+            <KeyboardProvider>{children}</KeyboardProvider>
+          </ThemeProvider>
         </PersistGate>
       </Provider>
     </QueryClientProvider>
