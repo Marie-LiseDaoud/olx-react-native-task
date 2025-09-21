@@ -17,7 +17,9 @@ const TabHeader = ({ title, route, removeBack = true, ...props }) => {
 
   const [locationModalVisible, setLocationModalVisible] = useState(false);
   const dispatch = useDispatch();
-  const { location } = useSelector((state) => state.preferences);
+  let { location } = useSelector((state) => state.preferences);
+  if (!location) location = "Lebanon";
+
   return (
     <View
       style={[
